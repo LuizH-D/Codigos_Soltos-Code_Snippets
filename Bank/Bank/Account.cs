@@ -27,8 +27,7 @@ namespace Bank {
         }
 
         public override string ToString() {
-            return "Account details: \n"
-                + "Account "
+            return "Account "
                 + AccountNumber
                 + ", Account Holder: "
                 + AccountHolder
