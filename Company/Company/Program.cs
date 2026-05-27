@@ -54,9 +54,7 @@ namespace Company {
                 if(!employees.Exists(x => x.Id == searchId)) {
                     Console.WriteLine("This ID does not exist!");
                 }
-            } while(string.IsNullOrEmpty(searchId) || !employees.Exists(x => x.Id == searchId));
-
-            Employees employeeIncreaseSalary = employees.Find(employee => employee.Id == searchId);
+            } while(string.IsNullOrEmpty(searchId) || !employees.Exists(x => x.Id == searchId));           
 
             do {
                 Console.Write("Enter the percentage: ");
@@ -67,7 +65,7 @@ namespace Company {
                 }
             } while(percentage <= 0);
 
-            employeeIncreaseSalary.IncreaseSalary(percentage);
+            employees.Find(employee => employee.Id == searchId).IncreaseSalary(percentage);
 
             Console.WriteLine("Updated list of employees: ");
             foreach(Employees employee in employees) {
